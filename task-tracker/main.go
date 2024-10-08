@@ -1,11 +1,11 @@
 package main
 
-import "fmt"
-
 func main() {
 	tasks := Tasks{}
+	storage := createStorage[Tasks]("tasks.json")
+	storage.load(&tasks)
 
-	tasks.addTask("Samuel Williams")
-	tasks.listTasks()
-	fmt.Println("Welcome to task tracker")
+	cmd := createCommandFlags()
+	cmd.execute(&tasks)
+	storage.save(tasks)
 }
