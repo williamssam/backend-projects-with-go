@@ -1,7 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"github.com/williamssam/backend-projects-with-go/tree/main/expense-tracker/cmd"
+)
 
 func main() {
-	fmt.Println("Expense tracker app")
+	cmd.Execute()
 }
