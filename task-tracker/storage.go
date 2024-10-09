@@ -31,5 +31,4 @@ func (store *Storage[T]) load(data *T) error {
 	}
 
 	return json.Unmarshal(file, data)
-
 }

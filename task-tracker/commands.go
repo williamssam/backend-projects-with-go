@@ -3,6 +3,9 @@ package main
 import (
 	"flag"
 	"fmt"
+	"log"
+	"strconv"
+	"strings"
 )
 
 type CommandFlags struct {
@@ -17,7 +20,8 @@ type CommandFlags struct {
 func createCommandFlags() *CommandFlags {
 	cf := CommandFlags{}
 
-	flag.StringVar(&cf.Add, "add", "", "Add new task i.e. --add 'new task' ")
+	flag.StringVar(&cf.Add, "add", "", "Add new task i.e. --add 'new task'")
+	flag.StringVar(&cf.Update, "update", "", "Update existing task i.e. --update '1~new task'")
 	flag.IntVar(&cf.Delete, "delete", -1, "Delete task using their id i.e. --delete 1")
 
 	// Marking a task as in progress or done
@@ -26,8 +30,6 @@ func createCommandFlags() *CommandFlags {
 
 	// Listing all tasks
 	flag.BoolVar(&cf.List, "list", false, "List all tasks i.e. --list")
-
-	// Listing all tasks by status
 
 	flag.Parse()
 
@@ -46,6 +48,18 @@ func (cmd *CommandFlags) execute(tasks *Tasks) {
 		tasks.listTasks()
 	case cmd.Delete != -1:
 		tasks.deleteTask(cmd.Delete)
+	case cmd.Update != "":
+		parts := strings.SplitN(cmd.Update, "~", 2)
+		if len(parts) < 2 {
+			log.Fatalln("Error, Invalid format for update. Please use id~new_title")
+		}
+
+		id, err := strconv.Atoi(parts[0])
+		if err != nil {
+			log.Fatalln("Error: Invalid index for edit")
+		}
+
+		tasks.updateTask(id, parts[1])
 	default:
 		fmt.Println("Invalid command, plese use -h to get all commands")
 	}

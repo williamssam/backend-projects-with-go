@@ -47,6 +47,20 @@ func (tasks *Tasks) validateId(id int) error {
 	return nil
 }
 
+func (tasks *Tasks) updateTask(id int, desc string) error {
+	t := *tasks
+
+	err := t.validateId(id)
+	if err != nil {
+		return err
+	}
+
+	t[id].Description = desc
+	fmt.Printf("Task ID (%v) updated \n", id)
+
+	return nil
+}
+
 func (tasks *Tasks) deleteTask(id int) error {
 	t := *tasks
 
