@@ -1,6 +1,6 @@
 # Task Tracker
 
-Task tracker is a project used to track and manage your tasks. In this task, you will build a simple command line interface (CLI) to track what you need to do, what you have done, and what you are currently working on.
+Task tracker is a project used to track and manage your tasks. Its a simple command line interface (CLI) to track what you need to do, what you have done, and what you are currently working on.
 
 ## Tech stack
 Built mainly with Go. No external package.
@@ -42,4 +42,4 @@ go build -o task-tracker
 ```
 
 ## Reference
-https://roadmap.sh/projects/task-tracker
+[https://roadmap.sh/projects/task-tracker](https://roadmap.sh/projects/task-tracker)
