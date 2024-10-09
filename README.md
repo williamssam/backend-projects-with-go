@@ -6,6 +6,7 @@ Solution for each project is in the respective folder. The folder name is the sa
 
 ## Beginner Projects
 - [Task Tracker](https://github.com/williamssam/backend-projects-with-go/tree/main/task-tracker) - https://roadmap.sh/projects/task-tracker
-
+- [Number Guessing Game](https://github.com/williamssam/backend-projects-with-go/tree/main/number-guessing-game) - https://roadmap.sh/projects/number-guessing-game - WIP
+ 
 
 - My Go journey starts here 😁🥳
