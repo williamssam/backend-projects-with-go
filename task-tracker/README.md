@@ -42,4 +42,4 @@ go build -o task-tracker
 ```
 
 ## Reference
-[https://roadmap.sh/projects/task-tracker](https://roadmap.sh/projects/task-tracker)
+https://roadmap.sh/projects/task-tracker
