@@ -56,6 +56,7 @@ func (tasks *Tasks) updateTask(id int, desc string) error {
 	}
 
 	t[id].Description = desc
+	t[id].UpdatedAt = time.Now()
 	fmt.Printf("Task ID (%v) updated \n", id)
 
 	return nil
